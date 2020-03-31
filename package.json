@@ -1,0 +1,25 @@
+{
+  "name": "c2n2-projetjs",
+  "version": "1.0.0",
+  "description": "C'est un projet pour valider les compétences C3N3 (C2N3).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "node-sass sass/main.scss css/style.css --watch",
+    "compil": "node-sass sass/main.scss css/style.comp.css",
+    "concat": "concat -o css/style.concat.css css/additional.css css/style.comp.css",
+    "prefix": "postcss css/style.concat.css --use=autoprefixer --map=false --output=css/style.prefix.css",
+    "compress": "node-sass css/style.prefix.css css/style.css --output-style compressed"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umeima/c2n2-projetjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umeima/c2n2-projetjs/issues"
+  },
+  "homepage": "https://github.com/umeima/c2n2-projetjs#readme"
+}
