@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "cairo";
+}
+
+.head {
+  display: flex;
+  position: relative;
+  background-image: url("./Design/Assets/SVG/Merged/bar-1.svg");
+}
+
+.head__logo {
+  margin-left: 2%;
+}
+
+.head__menu {
+  margin-left: 70%;
+  margin-top: 1%;
+  margin-right: 2%;
+}
+
+.head__menu__liste {
+  margin: 25px;
+  justify-items: center;
+  font-size: large;
+  font-weight: 700;
+  padding: 0px 5px;
+}
+
+.head__menu__liste__button {
+  width: 100%;
+  border: 1.5px solid #1A519E;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.head__menu__liste__button svg {
+  padding-left: 13px;
+  padding-right: 5px;
+}
+
+.medical {
+  background-color: #F4CF1B;
+}
+
+.medical__titre, .medical__para {
+  text-align: center;
+}
+
+.medical__para {
+  margin-left: 35%;
+  margin-right: 35%;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1078AD;
+  font-family: 'Cairo',sans-serif;
+}
+
+.parti1 {
+  display: flex;
+  position: relative;
+  margin-top: 2%;
+  margin-left: 5%;
+}
+
+.parti1__medical {
+  margin-left: 15%;
+}
+
+.parti1__medical__titre {
+  text-align: center;
+  color: #1078AD;
+  font-size: 30px;
+  margin-left: 9%;
+}
+
+.parti1__medical__emoticon {
+  margin-top: 3%;
+  margin-left: 48%;
+}
+
+.parti1__medical__para {
+  color: #7F7F7F;
+  font-weight: 500;
+  text-align: center;
+  font-size: 24px;
+  margin-left: 16%;
+  margin-right: 10%;
+}
+
+.parti1__medical__butt {
+  height: 38px;
+  margin-top: 2%;
+  margin-left: 18%;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  background-color: #1078AD;
+}
+
+/*# sourceMappingURL=style.css.map */
