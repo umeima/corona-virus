@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -100,6 +101,80 @@ body {
   text-align: center;
   font-size: 24px;
   background-color: #1078AD;
+}
+
+.Symptômes {
+  margin: 0 80px 80px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 20% 45% 45%;
+  margin-left: 27%;
+  margin-top: 4%;
+}
+
+.Symptômes__titre {
+  font-size: 28px;
+  grid-column: 1/3;
+  text-align: center;
+  letter-spacing: 0;
+  margin-right: 20%;
+}
+
+.Symptômes__fièvre {
+  grid-column: 1/2;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 40px;
+}
+
+.Symptômes__fièvre__fièvre--titre {
+  padding-left: 40px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.Symptômes__nausé {
+  grid-column: 2/3;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 40px;
+}
+
+.Symptômes__nausé__nausé--titre {
+  margin-left: -40px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.Symptômes__gene {
+  grid-column: 1/2;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 40px;
+}
+
+.Symptômes__gene__gene--titre {
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+.Symptômes__gorge {
+  grid-column: 2/3;
+  margin-left: 0%;
+  margin-bottom: 40px;
+}
+
+.Symptômes__gorge__gorge--titre {
+  margin-left: -20px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: #000000;
 }
 
 /*# sourceMappingURL=style.css.map */
