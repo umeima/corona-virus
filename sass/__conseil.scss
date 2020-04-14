@@ -1,38 +1,107 @@
-h3{
-    text-align: center;
-    font-size: 28px;
-    margin-top: 1%;
-    font-weight: 700;
-    color: #1078AD;
+.int {
 
-}
-.info{
-    background-color: #D0E5F0;
-    display : flex;
-    flex-direction: row;
-    
-    padding-bottom: 2%;
-    &__title{
-         color: #1078AD;
-         font-size: 24px;
-         text-align: center;
-         font-weight: 700;
-         margin-top: 3%;
+    .titre {
+        text-align: center;
+        height: 100px;
+        font-size: 35px;
+        font-weight: bold;
+        color:#1A519E ;
+      
         
     }
-    &__para{
-        color: #1A519E;
-        font-size: 20px;    
-        font-weight: 700;
-        margin-left: 10%;
-        text-align: center;
+        .container {
+           
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        height: 700px;
+        margin-left: 5%;
+        margin-right: 5%;
+         h3 {
+           
+             color: #1A519E;
+           
+             text-align: center;
+             display: block;
+             margin-left: auto;
+             margin-right: auto;
+             width: 70%;
+             padding-top:15px;
+            
+         }
+        img {
+            height: 50%;
+            width: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+             
+        }
+                .box1 {
+                  
+                    grid-column:2/3 ;
+                    grid-row:1/2 ;
+                   
+                   
+                  
+                }
+                .box2 {
+                    grid-column:1/2 ;
+                    grid-row:1/2 ;
+                 
+                }
+                .box3 {
+                    grid-column:3/4 ;
+                    grid-row:1/2 ;
+                  
+                }
+                .box4 {
+                    grid-column:1/2 ;
+                    grid-row:2/3 ;
+                 
+                }
+                .box5 {
+                    grid-column:2/3 ;
+                    grid-row:2/3 ;
+                   
+                }
+                .box6 {
+                    grid-column:3/4 ;
+                    grid-row: 2/3;
+                   
+                }
+                .box7 {
+                    grid-column:1/4;
+                    grid-row: 3/4;
+               
+        }
     }
-    svg{
-        margin-top: 2%;
-        margin-left: 15%;
-       
-    }
+ 
 }
+
+
+.info{
+
+    margin-top: -0.8%;
+ 
+    &__titre{
+ 
+       margin-bottom:  -0.5%;
+    }
+ }
+ 
+ 
+ 
+ .proteger{
+     
+      &__title{
+ 
+         text-align: center;
+         color: #1078AD;
+         
+      }
+ 
+ }
 .coro{
 &__title{
     text-align: center;
@@ -65,85 +134,8 @@ h3{
     }
 }
 }
-  .partie1 {
+  
 
-       
-            .hello {
-                
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
-            height: 700px;
-            margin-left: 5%;
-            margin-right: 5%;
-             h4 {
-               
-                 color: #1A519E;
-               
-                 text-align: center;
-                 display: block;
-                 margin-left: auto;
-                 margin-right: auto;
-                 
-                 padding-top:15px;
-              
-             }
-            img {
-                height: 50%;
-                width: auto;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                 
-            }
-                    .box1 {
-                        
-                        grid-column:2/3 ;
-                        grid-row:1/2 ;
-                       
-                    }
-                    .box2{
-                        grid-column:1/2 ;
-                        grid-row:1/2 ;
-                       
-                    }
-                    .box3 {
-                        grid-column:3/4 ;
-                        grid-row:1/2 ;
-                       
-                    }
-                    .box4 {
-                        grid-column:1/2 ;
-                        grid-row:2/3 ;
-                        
-                    }
-                    .box5 {
-                        grid-column:2/3 ;
-                        grid-row:2/3 ;
-                        
-                        
-                     
-                    }
-                    .box6 {
-                        grid-column:3/4 ;
-                        grid-row: 2/3;
-                        
-                      
-                    }
-                    .box7 {
-                        grid-column:1/4;
-                        grid-row: 3/4;
-                       
-                       
-                           
-               
-                
-              
-
-            }
-        }
-     
-    }
     .Symptômes{
         margin: 0 80px 80px;
         display: grid;
@@ -157,7 +149,7 @@ h3{
             grid-column: 1/3;
             text-align: center;
             letter-spacing: 0;
-           margin-right:6%;
+          
             
         }
         &__fièvre{
@@ -260,4 +252,30 @@ h3{
             }
         }
     }
-    
+    .infor{
+        background-color: #D0E5F0;
+        
+        padding-bottom: 2%;
+        &__titre{
+             color: #1078AD;
+             font-size: 24px;
+             text-align: center;
+             font-weight: 700;
+             margin-top: 3%;
+             margin-left: 3%;
+            
+        }
+        &__parag{
+            color: #1A519E;
+            font-size: 20px;    
+            font-weight: 700;
+            margin-left: 10%;
+            text-align: center;
+            margin-right: 4%;
+        }
+        svg{
+            margin-top: 2%;
+            margin-left: 45%;
+        }
+    }
+      
