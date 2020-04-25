@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    
 }
 
 body {
@@ -68,6 +69,8 @@ body {
     position: relative;
     margin-top: 2%;
     margin-left: 5%;
+    
+    
     &__medical{
         margin-left: 15%;
         
@@ -101,4 +104,5 @@ body {
             background-color: #1078AD;
         }
     }
+
 }
