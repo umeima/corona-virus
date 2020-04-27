@@ -1,0 +1,147 @@
+  
+.stipers {
+    padding: 2% 17% 0% 15%;
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    
+    h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        color: #1078AD;
+        position: relative;
+      
+
+
+        &::before {
+            content: '';
+            height: 22px;
+            width: 22px;
+            background-color: #1078AD;
+            border-radius: 50%;
+            position: absolute;
+            top: -25px;
+            
+            }
+
+    
+    }
+
+    
+
+    .mouvement {
+
+        &::before {
+            content: '';
+            height: 48px;
+            width: 48px;
+            background-color: #88b7d3;
+            border-radius: 50%;
+            position: absolute;
+            top: -36Px;
+            z-index: 100;
+    
+    
+        }
+
+        &::after {
+            content: '';
+            height: 22px;
+            width: 22px;
+            background-color: #F4CF1B;
+            border-radius: 50%;
+            position: absolute;
+            top: -25px;
+            z-index: 1000;
+        }
+    
+    }
+    
+
+    
+}
+
+.préambul{
+
+    text-align: center;
+    margin-top: 5%;
+    
+            
+    
+    &__contenu{
+      
+    
+    background-color:#96C5DC;
+    border-radius: 5px;
+    padding-bottom: 80px;
+    margin: 10px auto 20px auto;
+    width: 72vw;
+    
+    
+          .préambul__deco{
+    
+        border-bottom: 2px solid #F4CF1B;
+        width: 20vw;
+        margin: 10px auto;
+        
+        
+              }
+                .préambul__paragraph{
+             
+                 margin: auto;
+                 width: 70vw;
+    
+    }
+  
+    
+    
+         
+    
+
+    
+    }
+    
+    .préambul__article{
+
+        margin: auto;
+        width: 72vw;
+        
+    
+        
+        }
+        .préambule__title{
+            margin: 0;
+            color:#1078AD ;
+            
+            }
+             .start{
+
+                background-color: #1078AD;     
+                border-radius: 5px;
+                border:2px solid #1078AD; 
+                width: 20%;
+                height: 50px;
+                font-size: 25px;
+                color: white;
+                display: block;
+                margin : auto;
+                margin-top: 2%;
+            
+            }
+       
+    
+         
+            &__line{
+                border: 1px solid #F4CF1B;
+                  width:50%;
+                  margin-left: 26%;
+                 
+                
+            }
+    
+    
+    
+    
+    }
