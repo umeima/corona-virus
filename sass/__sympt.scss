@@ -1,10 +1,10 @@
 .Symptômes{
-    margin: 0 auto 80px;
+   // margin: 0 auto 80px;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 10% 45% 45%;
     //margin-left: 27%;
-    margin-top:4%;
+   // margin-top:4%;
     
     &__titre{
         font-size: 28px;
@@ -39,7 +39,7 @@
       
 
         &__nausé--titre{
-            margin-left: -40px;
+           // margin-left: -40px;
             font-size: 20px;
             font-weight: 700;
             letter-spacing: 0;

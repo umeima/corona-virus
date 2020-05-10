@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+    integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>  
+    <div>
+
     <title>corona-test</title>
 </head>
 <body>
 <!---------------------------------------------navbar------------------------------------------------------------------------------------------->
     <header>
      
-        
-        <div>
+      
   
             <nav class="head">
             
@@ -38,8 +41,60 @@
     <h1>Résultats</h1>
 
 </div>
+<!-----------------------------------------------------------test----------------------------------------------------------------------->
+<section class="box visible" id='container'>
+
+    <!----------------------progress_bar--------->
+            
+            <div class="progress">
+                <h3><span class="question-number">1</span> /22</h3>
+                <div class="progress__bar">
+                    <div class="bar"></div>
+                </div>
+            </div>
+    
+    
+    
+            <h1 class="box__question" id="nextQuestion">Pensez-vous avoir ou avoir eu de la fièvre ces 10 derniers jours <br> (frissons, sueurs) ?</h1>
+
+
+               <!-- <input type="number"  id="degrés" min="34" max="42" placeholder="34 - 42">
+            <span class="input-span">degrés</span> 
+ -->
+
+
+            <div class="answer-inputs">
+
+    
+                <div>
+                    <input type="radio"  name="choix" id="oui">
+                    <label for="oui">
+                        <i class="fas fa-check"></i>
+                        <span>Oui</span> </label>
+                </div>
+    
+                <div>
+                    <input type="radio" name="choix" id="non">
+                    <label for="non">
+                        <i class="fas fa-times"></i>
+                        <span>Non</span>
+                    </label>
+                </div>
+            </div>
+    
+    <!----------------------------------------zone buttons  suivent and precedent ------------------------------------------------------->
+    
+    <div class="area">
+        <button class="area__précédent " id="pré-btn">Précédent</button>
+        <button class="area__suivent" id="next-btn">Suivant</button>
+    </div>        
+        </section>
+    
+  
+        
+   
 <!------------------------------------------------péambul--------------------------------------------------------------------------------->
-<div class="préambul">
+<div class="préambul" id="pré">
     <div class="préambul__contenu">
         <h1 class="préambule__title"> PRÉAMBULE</h1>
         <p class="préambul__article">«L’application est fournie à titre gratuit, en l’état, uniquement à des fins
@@ -127,6 +182,8 @@
         <img src="./Design/Assets/png/En chiffres-2.png" alt="img">
     </div>
     </footer>
-    
+  <script src="js/test.js"> </script>
 </body>
+
+
 </html>
