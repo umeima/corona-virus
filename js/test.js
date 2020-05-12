@@ -9,7 +9,8 @@ const précédent = document.getElementById("pré-btn")
 //const progressBar=document.querySelector(".progress")
 const nextNumber=document.querySelector(".question-number")
 const barWidth=document.querySelector(".bar")
- 
+const preambTitle=document.querySelector(".préambule__title")
+ const  resultMessage=document.querySelectorAll('.préambul__contenu p')
 
 
 
@@ -17,9 +18,9 @@ const barWidth=document.querySelector(".bar")
 
 //-----------------------//
 let index=0;
-//-----------------------//
+//--------qst quiz---------------//
 
-
+let knowQst={}
 
 
 
@@ -58,6 +59,9 @@ nextButton.addEventListener('click',()=>{
     nextButton.disabled=true
     if(index===21){
         nextButton.innerHTML="terminer"
+        nextButton.classList.add("resultat");
+        const doneTest = document.querySelector(".resultat");
+        doneTest.addEventListener('click', comptQst)
     } else{
         nextButton.innerHTML="suivant"
     }
@@ -72,7 +76,7 @@ function showQuestion(questions){
     if(questions.input.type==='radio'){
     questions.input.answer.forEach(answer=> {
         input.innerHTML+=`  <div>
-        <input type="radio"  name="choix" id="${answer.text}">
+        <input type="radio"  name="${questions.input.questionNumber}" id="${answer.text}">
         <label for="${answer.text}">
             <i class="fas ${answer.icon}"></i>
             <span>${answer.text}</span> </label>
@@ -82,7 +86,7 @@ function showQuestion(questions){
 
     } else{ 
         input.innerHTML =`
-        <input type="number"  id="${questions.input.name}" min="${questions.input.min}" max="${questions.input.max}" placeholder="${questions.input.min} - ${questions.input.max}">
+        <input type="number"  id= "${questions.input.name}" name="${questions.input.questionNumber}" min="${questions.input.min}" max="${questions.input.max}" placeholder="${questions.input.min} - ${questions.input.max}">
      <span class="input-span">${questions.input.name}</span> 
 `
 
@@ -101,6 +105,7 @@ prog(index)
 nextButton.disabled=true
 if(index===21){
 nextButton.innerHTML="terminer"
+
 } else{
     nextButton.innerHTML="suivant"
 }
@@ -112,7 +117,7 @@ function évident(){
 if (index===0){
 précédent.style.visibility="hidden"
 }else{
-    précédent.style.visibility="visible"
+    précédent.style.visibility="visible" 
 }
 }
 
@@ -129,18 +134,123 @@ input.addEventListener("change",(event)=>{
     if(input.type==='number'){
     const number=parseFloat(input.value)
     if (number>=input.min && number<=input.max){
-        nextButton.disabled=false  
+        nextButton.disabled=false 
+        knowQst[input.name]= input.value
     }else{
-        nextButton.disabled=true  
+        nextButton.disabled=true 
+         
     }
     
     }else{
         nextButton.disabled=false  
+        knowQst[input.name]= input.id
+        console.log(knowQst);
     }
     
 })
 
 
+//-----------------------------resultat de quiz --------------------------//
+function result(damage){
+    stepper[1].classList.remove("mouvement");
+    stepper[2].classList.add("mouvement") ;
+    button.classList.remove("visible");
+    préambul.classList.remove("visible");
+    qst.classList.add("visible");
+    button.innerHTML='recommoncer le test';
+    preambTitle.innerHTML="resultat"
+    button.addEventListener('click',()=>{
+        window.location.reload();
+
+    })
+    if (damage === 0) {
+        resultMessage[0].innerText =
+            "Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la situation. Pour toute information concernant le Covid-19, consulter la page Conseils";
+        resultMessage[1].innerText =
+            "Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre température deux fois par jour. Rappel des mesures d’hygiène.";
+        resultMessage[0].style.fontSize = "25px";
+        resultMessage[0].style.fontWeight = "bold";
+        resultMessage[0].style.color = "#026534";
+    } else if (damage === 1) {
+        resultMessage[0].innerText =
+            "Nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer vos symptômes";
+        resultMessage[1].innerText =
+            "Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre température deux fois par jour. Rappel des mesures d’hygiène.";
+        resultMessage[0].style.fontSize = "25px";
+        resultMessage[0].style.fontWeight = "bold";
+        resultMessage[0].style.color = "#026534";
+    } else if (damage === 2) {
+        resultMessage[0].innerText =
+            "Vous pouvez faire une téléconsultation ou médecin généraliste ou visite à domicile. Appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent.";
+        resultMessage[1].innerText =
+            "Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre température deux fois par jour. Rappel des mesures d’hygiène.";
+        resultMessage[0].style.fontSize = "25px";
+        resultMessage[0].style.fontWeight = "bold";
+        resultMessage[0].style.color = "#787878";
+    } else {
+        resultMessage[0].innerText = "Appelez le 141";
+        resultMessage[1].innerText =
+            "Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre température deux fois par jour. Rappel des mesures d’hygiène.";
+    
+        resultMessage[0].style.color = "#d63031";
+        resultMessage[0].style.fontSize = "28px";
+        resultMessage[0].style.fontWeight = "bolder";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+//---------------------cumul ls qst dng--------------------------//
+let damage=0;
+
+
+
+function comptQst(){
+    if (knowQst['Q1']==='oui'){
+ damage++
+    }
+    if (parseFloat(knowQst['Q2']>39)||parseFloat(knowQst['Q2']<35)){
+    damage++
+    }
+    if(knowQst['Q3']==='oui'){
+        damage++
+    }
+    if(knowQst['Q4']==='oui'){
+        damage++
+    }
+    if(knowQst['Q5']==='oui'){
+        damage++
+    }
+    if(knowQst['Q6']==='oui'){
+        damage++
+    }
+    if(knowQst['Q7']==='oui'){
+        damage++
+    }
+    if(knowQst['Q10']==='Très fatigué'||knowQst['Q10']==='fatigué(e)'){
+    damage++
+    }
+    if(knowQst['Q15']==='oui'){
+        damage++
+    }
+    if(knowQst['Q16']==='oui'){
+        damage++
+    }
+    result(damage);
+}
 
 
 
@@ -169,6 +279,7 @@ const questions = [{
 
     input: {
         type: 'radio',
+        questionNumber: 'Q1',
         answer: [{
             text: 'Oui',
             icon: 'fa-check'
@@ -182,6 +293,7 @@ const questions = [{
 
     input: {
         type: 'number',
+        questionNumber: 'Q2',
         name: 'degrés',
         min: 34,
         max: 42
@@ -191,6 +303,7 @@ const questions = [{
 
     input: {
         type: 'radio',
+        questionNumber: 'Q3',
         answer: [{
             text: 'Oui',
             icon: 'fa-check'
@@ -199,14 +312,12 @@ const questions = [{
             icon: 'fa-times'
         }]
     }
-},
-
- 
-{
+}, {
     question:'Avez-vous eu des courbatures inhabituelles au cours des derniers jours ?',
 
     input: {
         type: 'radio',
+        questionNumber: 'Q4',
         answer: [{
             text: 'Oui',
             icon: 'fa-check'
@@ -220,6 +331,7 @@ const questions = [{
 
     input: {
         type: 'radio',
+        questionNumber: 'Q5',
         answer: [{
             text: 'Oui',
             icon: 'fa-check'
@@ -233,6 +345,7 @@ const questions = [{
 
     input: {
         type: 'radio',
+        questionNumber: 'Q6',
         answer: [{
             text: 'Oui',
             icon: 'fa-check'
@@ -246,6 +359,7 @@ const questions = [{
 
     input: {
         type: 'radio',
+        questionNumber: 'Q7',
         answer: [{
             text: 'Oui',
             icon: 'fa-check'
@@ -259,6 +373,7 @@ const questions = [{
 
     input: {
         type: 'radio',
+        questionNumber: 'Q8',
         answer: [{
             text: 'Oui',
             icon: 'fa-check'
@@ -272,6 +387,7 @@ const questions = [{
 
     input: {
         type: 'radio',
+        questionNumber: 'Q9',
         answer: [{
             text: 'Oui',
             icon: 'fa-check'
@@ -285,6 +401,7 @@ const questions = [{
 
     input: {
         type: 'radio',
+        questionNumber: 'Q10',
         answer: [{
             text: 'Bien',
             icon: ' far fa-laugh'
@@ -304,6 +421,7 @@ const questions = [{
 
     input: {
         type: 'number',
+        questionNumber: 'Q11',
         name: 'ans',
         min: 15,
         max: 110
@@ -315,6 +433,7 @@ const questions = [{
 
     input: {
         type: 'number',
+        questionNumber: 'Q12',
         name: 'kg',
         min: 20,
         max: 250
@@ -326,6 +445,7 @@ const questions = [{
 
     input: {
         type: 'number',
+        questionNumber: 'Q13',
         name: 'cm',
         min: 80,
         max: 250
@@ -337,6 +457,7 @@ const questions = [{
 
     input: {
         type: 'radio',
+        questionNumber: 'Q14',
         answer: [{
             text: 'Oui',
             icon: 'fa-check'
@@ -352,6 +473,7 @@ const questions = [{
 
     input: {
         type: 'radio',
+        questionNumber: 'Q15',
         answer: [{
             text: 'Oui',
             icon: 'fa-check'
@@ -367,6 +489,7 @@ const questions = [{
 
     input: {
         type: 'radio',
+        questionNumber: 'Q16',
         answer: [{
             text: 'Oui',
             icon: 'fa-check'
@@ -382,6 +505,7 @@ const questions = [{
 
     input: {
         type: 'radio',
+        questionNumber: 'Q17',
         answer: [{
             text: 'Oui',
             icon: 'fa-check'
@@ -397,6 +521,7 @@ const questions = [{
 
     input: {
         type: 'radio',
+        questionNumber: 'Q18',
         answer: [{
             text: 'Oui',
             icon: 'fa-check'
@@ -412,6 +537,7 @@ const questions = [{
 
     input: {
         type: 'radio',
+        questionNumber: 'Q19',
         answer: [{
             text: 'Oui',
             icon: 'fa-check'
@@ -426,6 +552,7 @@ const questions = [{
 
     input: {
         type: 'radio',
+        questionNumber: 'Q20',
         answer: [{
             text: 'Oui',
             icon: 'fa-check'
@@ -444,6 +571,7 @@ const questions = [{
 
     input: {
         type: 'radio',
+        questionNumber: 'Q21',
         answer: [{
             text: 'Oui',
             icon: 'fa-check'
@@ -455,9 +583,10 @@ const questions = [{
 }, 
 {
     question: 'Prenez-vous un traitement immunosuppresseur ? C’est un traitement qui diminue vos défenses contre les infections. Voici quelques exemples : corticoïdes, méthotrexate, ciclosporine, tacrolimus, azathioprine, cyclophosphamide (liste non exhaustive).',
-
+    
     input: {
         type: 'radio',
+        questionNumber: 'Q22',
         answer: [{
             text: 'Oui',
             icon: 'fa-check'

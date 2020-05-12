@@ -3,10 +3,11 @@
   margin: 0;
   padding: 0;
 }
-
+html{
+  overflow-x: hidden;
+}
 body {
   font-family: "cairo";
-  overflow-x: hidden;
 }
 
 .head {
@@ -790,12 +791,6 @@ input[type="number"] {
   padding-bottom: 80px;
   margin: 10px auto 20px auto;
   width: 72vw;
-}
-
-.préambul__contenu .préambul__deco {
-  border-bottom: 2px solid #F4CF1B;
-  width: 20vw;
-  margin: 10px auto;
 }
 
 .préambul__contenu .préambul__paragraph {
