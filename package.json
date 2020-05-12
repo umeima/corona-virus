@@ -4,13 +4,13 @@
   "description": "C'est un projet pour valider les compétences C3N3 (C2N3).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "node-sass sass/main.scss css/style.css --watch",
-    "compil": "node-sass sass/main.scss css/style.comp.css",
-    "concat": "concat -o css/style.concat.css css/additional.css css/style.comp.css",
-    "prefix": "postcss css/style.concat.css --use=autoprefixer --map=false --output=css/style.prefix.css",
-    "compress": "node-sass css/style.prefix.css css/style.css --output-style compressed"
-
+    "clean": "rimraf css",
+    "toCSS": "node-sass --output-style expanded --source-map=true sass -o css",
+    "toPrefixed": "postcss css/style.css --use=autoprefixer --map=false --output=css/style.css",
+    "toMinified": "cleancss --level=1 --source-map --source-map-inline-sources --output css/style.css css/style.css",
+    "imagemin": "imagemin src/images/* -o dist/images -p",
+    "onDevelopment": "npm run toCSS -- --watch",
+    "build": "npm run clean && npm run toCSS && npm run toPrefixed && npm run toMinified"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/umeima/c2n2-projetjs/issues"
   },
-  "homepage": "https://github.com/umeima/c2n2-projetjs#readme"
+  "homepage": "https://github.com/umeima/c2n2-projetjs#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.7.5",
+    "build": "^0.1.4",
+    "node-sass": "^4.13.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^7.1.0"
+  }
 }

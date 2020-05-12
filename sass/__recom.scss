@@ -1,0 +1,50 @@
+.Recom{
+    background-color: #1078AD;
+     &__titre{
+        color: white;
+        font-weight: 700;
+        font-size: 30px;
+         margin-left: 40%;
+         margin-top: 3%;
+     }
+     &__information{
+         display: flex;
+         flex-direction: row;
+         margin-right: 5%;
+         margin-left: 5%;
+         &--parag{
+             color: white;
+             font-size: 22px;
+             font-weight: 500;
+             margin-right: 40%;
+             margin-top: 1%;
+             margin-bottom: 2%;
+             strong{
+                 color:black;
+             }
+         }
+    
+     }
+    }
+    .parti2{
+        &__information{
+            
+    &--titre{ 
+            color: #F4CF1B;
+            font-size: 26px;
+            margin-top: 30%;
+            margin-left: 13%;    
+        }
+        &--phone{
+            background-color: #F4CF1B;
+            color: #1078AD;
+            padding-left: 9%;
+            border-radius: 5px;
+        }
+         &--link{
+            font-size: 24px;
+            color: white;
+            text-decoration-color: #F4CF1B;
+        }
+    }
+    }
