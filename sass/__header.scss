@@ -1,6 +1,8 @@
 * {
     margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
     
 }
 
@@ -32,8 +34,10 @@ body {
                 &__button{
                     width: 100%;
                     
-                    border: 1.5px solid #1A519E;
-                    border-radius: 10px;
+                   
+                    border:2px solid #1078AD;
+                    color: #1078AD;
+                    border-radius: 5px;
                     background-color: transparent;
                     svg{
                         padding-left: 13px;
@@ -67,12 +71,12 @@ body {
 .parti1{
     display : flex;
     position: relative;
-    margin-top: 2%;
-    margin-left: 5%;
+   margin-top: 2%;
+     margin-left: 5%;
     
     
     &__medical{
-        margin-left: 15%;
+        margin-left: 10%;
         
         &__titre{
         text-align: center;
@@ -104,5 +108,19 @@ body {
             background-color: #1078AD;
         }
     }
+}
+.btn{
+ font-size: 35px;
+ padding: 5px 200px ;
+ margin-left:40px ;
+ color:#1078AD ;
+ background-color: #96C5DC;
+ border:2px solid #1078AD;
+ border-radius: 5px;
+ transition: .5s all ease;
 
+}
+.btn:hover{
+    color: white;
+    background-color: #1078AD;
 }

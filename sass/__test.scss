@@ -130,19 +130,23 @@
 
 
     button{
-        background-color: #D0E5F0;
+    
         border-radius: 5px;
         border:2px solid #1078AD; 
         padding: 10px 20px  ;
         font-size: 15px;
-        color:  white;
         float:right;
-        outline: none;  
+        outline: none; 
+        color:#1078AD ;
+        background-color: #96C5DC; 
+        transition: .5s all ease;
       
     
 
         &:hover{
             background-color: #1078AD;
+            color: white;
+
         }
 
         &:disabled{

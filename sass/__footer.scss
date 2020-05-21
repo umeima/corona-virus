@@ -17,8 +17,16 @@
     &__button{
         width: 30%;
         margin-left: 35%;
-        background-color: #1078AD;
+        background-color: transparent; 
         font-size: 24px;
+        border-radius: 5px;
+        border:2px solid #1078AD;
+        color: #1078AD;
+    }
+    &__button:hover{
+        background-color: #1078AD;
+        color: white;
+       
     }
 }
 
